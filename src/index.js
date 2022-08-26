@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const name = 'World';
+const hello = <h1>Hello React Project!</h1>
+const greet = <h1>Hello, { name }!</h1>
+const greetHello = (name) => {
+  return ( <h1>Greetings, { name }! Welcome to your first React JS Project.</h1> );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
