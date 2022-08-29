@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { App } from './app/App';
 import './index.css';
-import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import { greet, greetHello, hello } from './intro/intro';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    { hello }
-    { greet }
-    { greetHello('World') }
+    <App />
   </React.StrictMode>
 );
 
