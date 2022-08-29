@@ -1,0 +1,9 @@
+.greet {
+  color: darkorange;
+  text-transform: capitalize;
+  text-decoration: overline;
+}
+
+.groot {
+  font-size:5rem;
+}
