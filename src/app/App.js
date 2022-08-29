@@ -1,21 +1,15 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { BlogCard } from '../blog/BlogCard';
+import { GuestBook } from '../guest-book/GuestBook';
 import { Footer } from '../layout/Footer';
 import { Header } from '../layout/Header';
-import { Halo } from '../hello/Halo';
-import { Hello } from '../hello/Hello';
 
 export function App() {
   return (
     <Container fluid>
       <Header />
-      <Row>
-        <Col>
-          <Hello />
-        </Col>
-        <Col>
-          <Halo />
-        </Col>
-      </Row>
+      <BlogCard />
+      <GuestBook />
       <Footer />
     </Container>
   );
