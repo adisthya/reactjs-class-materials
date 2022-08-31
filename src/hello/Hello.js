@@ -1,3 +1,3 @@
-export function Hello() {
-  return (<h1>Hello Component Function World!</h1>);
+export function Hello(props) {
+  return (<h1>Hello, welcome to React, { props.name }!</h1>);
 }

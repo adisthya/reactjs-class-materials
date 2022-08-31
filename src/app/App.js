@@ -12,10 +12,10 @@ export function App() {
       <Header />
       <Row as="section" className="mx-5 my-3">
         <Col sm="6">
-          <Hello />
+          <Hello name="Wita" />
         </Col>
         <Col sm="6">
-          <Halo />
+          <Halo name="Mita" />
         </Col>
       </Row>
       <BlogCard />
