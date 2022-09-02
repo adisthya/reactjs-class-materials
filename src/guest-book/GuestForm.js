@@ -5,6 +5,7 @@ export class GuestForm extends Component {
     super(props);
 
     this.state = {
+      action: 'new',
       value: {
         guestName: '',
         guestEmail: '',
@@ -29,11 +30,26 @@ export class GuestForm extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log('value', this.state.value);
+
+    this.props.save(this.state.action, this.state.value);
+  }
+
+  fillGuestForm() {
+    const { guest } = this.props;
+
+    if (guest) {
+      this.setState({ action: 'edit', value: { ...guest } });
+    }
+  }
+
+  componentDidMount() {
+    this.fillGuestForm();
   }
 
   render() {
     const { value } = this.state;
+    const { returnPage } = this.props;
+
 
     return (
       <Row as="section" className="d-flex justify-content-center">
@@ -61,8 +77,8 @@ export class GuestForm extends Component {
                     onChange={(e) => this.handleValueChange('guestAddress', e)} />
                 </Form.Group>
                 <Form.Group className="d-flex justify-content-end">
-                  <Button variant="primary" type="submit" className="me-2">Simpan</Button>
-                  <Button variant="light" type="reset">Reset</Button>
+                  <Button variant="dark" type="submit" className="me-2">Simpan</Button>
+                  <Button variant="light" type="reset" onClick={returnPage}>Reset</Button>
                 </Form.Group>
               </Form>
             </Card.Body>
