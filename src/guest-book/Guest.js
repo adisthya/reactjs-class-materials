@@ -2,7 +2,6 @@ import uniqid from 'uniqid';
 import { Component } from "react";
 import { GuestBook } from "./GuestBook";
 import { GuestForm } from "./GuestForm";
-import { Button, Modal } from 'react-bootstrap';
 
 const sampleGuest = [
   {
@@ -34,7 +33,6 @@ export class Guest extends Component {
 
     this.openForm = this.openForm.bind(this);
     this.openList = this.openList.bind(this);
-    this.openDialog = this.openDialog.bind(this);
     this.save = this.save.bind(this);
   }
 
@@ -44,26 +42,6 @@ export class Guest extends Component {
 
   openList() {
     this.setState({ page: 'list' });
-  }
-
-  openDialog(guest, open) {
-    console.log('guest', guest, 'open', open || this.state.showDialog);
-    return (
-      <Modal show={this.state.showDialog || open}>
-        <Modal.Header closeButton>
-          <Modal.Title>Konfirmasi Hapus</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Apakah Anda yakin mau menghapus data { guest.guestName }</Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={() => this.save('delete', guest)}>
-            Hapus
-          </Button>
-          <Button variant="dark" onClick={() => this.setState({ showDialog: false })}>
-            Batal
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    );
   }
 
   save(action, guest) {
