@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
 
 export function GuestFormFn(props) {
@@ -33,33 +33,12 @@ export function GuestFormFn(props) {
   const { value } = state;
   const { returnPage } = props;
 
-  const fillGuestForm = () => {
-    const { guest } = props;
-
-    if (guest) {
-      setState({ action: 'edit', value: { ...guest } });
-    }
-  }
-  // const fillGuestForm = useCallback(() => {
-  //   const { guest } = props;
-
-  //   if (guest) {
-  //     setState({ action: 'edit', value: { ...guest } });
-  //   }
-  // }, [props]);
-
   useEffect(() => {
       console.log('use effect fill guest form');
-      const { guest } = props;
-
-      if (guest) {
-        setState({ action: 'edit', value: { ...guest } });
+      if (props.guest) {
+        setState({ action: 'edit', value: { ...props.guest } });
       }
-  }, [props]);
-
-  useEffect(() => {
-    console.log('Guest', state.value.guestEmail, 'is updated');
-  }, [state.value.guestEmail]);
+  }, [props.guest]);
 
   return (
     <Row as="section" className="d-flex justify-content-center">
