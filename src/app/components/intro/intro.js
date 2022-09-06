@@ -1,5 +1,5 @@
-import styles from '../assets/css/styles.module.css';
-import '../assets/css/styles.css';
+import styles from '../../../assets/css/styles.module.css';
+import '../../../assets/css/styles.css';
 
 const embeddedStyles = {
   color: 'blue',

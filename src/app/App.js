@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
-import { GuestFn } from '../guest-book-fn/GuestFn';
-import { Footer } from '../layout/Footer';
-import { Header } from '../layout/Header';
+import { GuestFn } from './components/guest-book-fn/GuestFn';
+import { Footer } from './components/layout/Footer';
+import { Header } from './components/layout/Header';
 
 export function App() {
   return (
