@@ -1,12 +1,13 @@
 import { Button } from "react-bootstrap";
-import { withIncrementCounter } from "./withCounter";
+import { withCounter } from "./withCounter";
 
 function ClickCounter(props) {
-  const { count, increment } = props;
+  const { count, increment, name } = props;
 
+  console.log('Props in ClickCounter:', props);
   return (
-    <Button variant="dark" onClick={increment}>Clicked { count } times.</Button>
+    <Button variant="dark" onClick={increment}>{ name || 'You' } clicked { count } times.</Button>
   )
 }
 
-export default withIncrementCounter(ClickCounter);
+export default withCounter(ClickCounter);

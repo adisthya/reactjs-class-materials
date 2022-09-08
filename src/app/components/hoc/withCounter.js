@@ -1,8 +1,8 @@
 import { Component } from "react";
 
-export function withIncrementCounter( OriginalComponent ) {
+export function withCounter( WrappedComponent ) {
 
-  class Counter extends Component {
+  class WithCounter extends Component {
     constructor(props) {
       super(props);
 
@@ -18,9 +18,10 @@ export function withIncrementCounter( OriginalComponent ) {
     }
 
     render() {
-      return <OriginalComponent count={this.state.count} increment={this.increment} />
+      console.log('Props in HOC:', this.props);
+      return <WrappedComponent count={this.state.count} increment={this.increment} { ...this.props } />
     }
   }
 
-  return Counter;
+  return WithCounter;
 }

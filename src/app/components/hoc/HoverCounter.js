@@ -1,12 +1,12 @@
 import { Button } from "react-bootstrap";
-import { withIncrementCounter } from "./withCounter";
+import { withCounter } from "./withCounter";
 
 function HoverCounter(props) {
-  const { count, increment } = props;
+  const { count, increment, name } = props;
 
   return (
-    <Button variant="dark" onMouseOver={increment}>Hovered { count } times.</Button>
+    <Button variant="dark" onMouseOver={increment}>{ name || 'You' }overed { count } times.</Button>
   )
 }
 
-export default withIncrementCounter(HoverCounter);
+export default withCounter(HoverCounter);
