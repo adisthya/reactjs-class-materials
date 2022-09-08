@@ -9,4 +9,4 @@ function HoverCounter(props) {
   )
 }
 
-export default withCounter(HoverCounter);
+export default withCounter(HoverCounter, 4);

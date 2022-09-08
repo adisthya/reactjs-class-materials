@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-export function withCounter( WrappedComponent ) {
+export function withCounter( WrappedComponent, incrementNumber = 1 ) {
 
   class WithCounter extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export function withCounter( WrappedComponent ) {
     }
 
     increment() {
-      this.setState({ count: this.state.count + 1 });
+      this.setState({ count: this.state.count + incrementNumber });
     }
 
     render() {
