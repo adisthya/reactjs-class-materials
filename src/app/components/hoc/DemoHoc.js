@@ -6,10 +6,10 @@ export function DemoHoc() {
   return (
     <Row className="d-flex justify-content-evenly align-items-center mb-5">
       <Col className="text-center">
-        <ClickCounter />
+        <ClickCounter name="Mita" />
       </Col>
       <Col className="text-center">
-        <HoverCounter />
+        <HoverCounter name="Wita" />
       </Col>
     </Row>
   )

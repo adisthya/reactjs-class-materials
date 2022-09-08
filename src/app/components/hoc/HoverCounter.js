@@ -5,7 +5,7 @@ function HoverCounter(props) {
   const { count, increment, name } = props;
 
   return (
-    <Button variant="dark" onMouseOver={increment}>{ name || 'You' }overed { count } times.</Button>
+    <Button variant="dark" onMouseOver={increment}>{ name || 'You' } hovered { count } times.</Button>
   )
 }
 
