@@ -1,5 +1,5 @@
 import { Container } from 'react-bootstrap';
-import { GuestFn } from './components/guest-book-fn/GuestFn';
+import { DemoHoc } from './components/hoc/DemoHoc';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 
@@ -7,7 +7,7 @@ export function App() {
   return (
     <Container fluid>
       <Header />
-      <GuestFn />
+      <DemoHoc />
       <Footer />
     </Container>
   );
