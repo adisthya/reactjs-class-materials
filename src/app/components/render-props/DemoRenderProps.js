@@ -13,18 +13,18 @@ export function DemoRenderProps() {
         } />
       </Col>
       <Col xs="6" className="text-center">
-        <RenderCounter render={
+        <RenderCounter>{
           (count, increment) => (
             <ClickCounter count={count} increment={increment} />
           )
-        } />
+        }</RenderCounter>
       </Col>
       <Col xs="6" className="text-center">
-        <RenderCounter render={
+        <RenderCounter>{
           (count, increment) => (
             <HoverCounter count={count} increment={increment} />
           )
-        } />
+        }</RenderCounter>
       </Col>
     </Row>
   );

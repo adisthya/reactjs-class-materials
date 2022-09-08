@@ -16,11 +16,11 @@ export class RenderCounter extends Component {
   }
 
   render() {
-    const { render } = this.props;
+    const { children } = this.props;
 
     return (
       <Fragment>
-        { render(this.state.count, this.increment) }
+        { children(this.state.count, this.increment) }
       </Fragment>
     )
   }
