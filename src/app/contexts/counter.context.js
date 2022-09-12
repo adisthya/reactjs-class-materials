@@ -55,3 +55,31 @@ export class CounterProvider extends Component {
     )
   }
 }
+
+/**
+ * 1. HOC function
+ * 2. Context
+ * 3. Render Props
+ */
+export function withConsumer(mapToProps) {
+  return (WrappedComponent) => {
+
+    class ConsumerHoc extends Component {
+      render() {
+        return (
+          <CounterContext.Consumer>{
+            ((value) => {
+              const props = mapToProps({ ...value, ...this.props });
+
+              console.log('props:', props);
+              return <WrappedComponent { ...props } />
+            })
+          }</CounterContext.Consumer>
+        )
+      }
+    }
+
+    return ConsumerHoc;
+  }
+}
+
