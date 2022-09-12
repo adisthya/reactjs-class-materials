@@ -5,17 +5,17 @@ export class RenderName extends Component {
     super(props);
 
     this.state = {
-      name: 'John Thor'
+      name: 'Budi'
     }
   }
 
   render() {
     const { name } = this.state;
-    const { getName } = this.props;
+    const { children } = this.props;
 
     return (
       <Fragment>
-        { getName(name) }
+        { children(name) }
       </Fragment>
     );
   }

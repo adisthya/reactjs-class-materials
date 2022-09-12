@@ -1,31 +1,33 @@
-import { Col, Row } from "react-bootstrap";
-import ClickCounter from "../hoc/ClickCounter";
-import HoverCounter from "../hoc/HoverCounter";
 import { RenderCounter } from "./RenderCounter";
+import { RenderGuest } from "./RenderGuest";
 import { RenderName } from "./RenderName";
 
 export function DemoRenderProps() {
+  const text = 'welcome to react!';
   return (
-    <Row className="d-flex justify-content-evenly align-items-center mb-5">
-      <Col xs="12">
-        <RenderName getName={(name) => (
-          <h1 className="text-center">Hi, my name is { name }!</h1>)
-        } />
-      </Col>
-      <Col xs="6" className="text-center">
-        <RenderCounter>{
-          (count, increment) => (
-            <ClickCounter count={count} increment={increment} />
+    <>
+    <p>Your name is&nbsp;
+      <RenderName>{
+        (name) => (
+            <strong>{ name }, { text }</strong>
           )
-        }</RenderCounter>
-      </Col>
-      <Col xs="6" className="text-center">
-        <RenderCounter>{
-          (count, increment) => (
-            <HoverCounter count={count} increment={increment} />
-          )
-        }</RenderCounter>
-      </Col>
-    </Row>
-  );
+      }</RenderName>
+    </p>
+    <RenderGuest>{
+      (guests) => {
+        return guests.map((guest) => (
+          <li key={guest.id}>Halo {guest.name} dari {guest.address}, no. telp. {guest.phone}</li>
+        ))
+      }
+    }</RenderGuest>
+    <RenderCounter>{
+      (increment, decrement) => (
+        <>
+          <button className="btn btn-dark btn-sm me-2" onClick={increment}>Increment</button>
+          <button className="btn btn-dark btn-sm" onClick={decrement}>Decrement</button>
+        </>
+      )
+    }</RenderCounter>
+    </>
+  )
 }
