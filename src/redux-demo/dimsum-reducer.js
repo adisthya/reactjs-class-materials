@@ -4,9 +4,9 @@
  * 2. Reducer         : bertugas mengelola perubahan yang terjadi pada state berdasarkan perintah action/dispatch tertentu.
  * 3. Action/Dispatch : bertugas mengirimkan perintah ke reducer untuk melakukan perubahan state.
  *
- * contoh kasus: Dimsum Store
- * 1. Store           : menyimpan informasi terkait stock persediaan dimsum.
- * 2. Reducer         : penjual dimsum yang berada di gerobak, bertugas menerima perintah dari pembeli (action/dispatch).
+ * contoh kasus: Dimsum Kiosk
+ * 1. Store           : gerobak dimsum yang menyimpan informasi terkait stock persediaan dimsum.
+ * 2. Reducer         : penjual dimsum yang menerima perintah dari pembeli (action/dispatch).
  * 3. Action/Dispatch : pembeli dimsum yang akan membeli dimsum di gerobak.
  */
 
